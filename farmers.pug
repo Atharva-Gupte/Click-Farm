@@ -1,0 +1,18 @@
+doctype html 
+html 
+    head 
+        title= title 
+    body 
+        div.container
+            h1 Farmer Details 
+            table.table 
+                thead
+                    tr  
+                        th ID 
+                        th Name 
+                        th Village
+                each item in items 
+                    tr 
+                        td= item.fid
+                        td=  item.f_name 
+                        td=  item.village 
