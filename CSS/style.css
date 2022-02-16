@@ -1,0 +1,226 @@
+/* CSS reset */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Navigation Bar */
+
+#navbar{
+    display: flex;
+    align-items: center;
+    position: sticky;
+    z-index: 1;
+    top: 0px;
+}
+
+#navbar::before{
+    content: "";
+    background-color: black;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.25;
+
+}
+
+/* Navigation Bar: List styling */
+
+nav{
+ flex:1;
+}
+
+nav ul{
+display: flex;
+justify-content: right;
+}
+
+nav ul li{
+    list-style: none;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    padding: 0px 9px;
+}
+
+nav ul li a:hover{
+    color: black;
+    background-color: white;
+    border-radius: 13px;
+}
+
+/* Navigation Bar: Logo */
+
+#logo img{
+    width: 100px;
+}
+
+/* Section Home */
+
+#home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+#home::before{
+    content: "";
+    /* background: radial-gradient(#fff,#ffd6d6); */
+    background: url('https://source.unsplash.com/2600x900/?farm,land') no-repeat;
+    position: absolute;
+    height: 478px;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.89;
+    top: 0px;
+    left: 0px;
+}
+
+.col2 h1{
+    text-align: center;
+    padding: 82px;
+    font-size: 1.8rem;
+}
+
+.col2 p{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.col2 a{
+    text-decoration: none;
+}
+
+.btn{
+    display: inline-block;
+    background: #ff523b;
+    color: white;
+    padding: 8px 30px;
+    margin: 44px 251px;
+    border-radius: 13px;
+}
+
+/* Services */
+#services-container h1{
+    line-height: 1;
+}
+#services{
+    margin: 36px 34px ;
+    display: flex;
+}
+
+#services .box{
+    border: 2px solid brown;
+    padding: 22px;
+    margin: 2px 4px;
+    border-radius: 23px;
+    background: #f2f2f2;
+}
+#services .box img{
+    height: 160px;
+    display: block;
+    margin: auto;
+}
+#services .box p{
+    font-family: 'Bree Serif', serif;
+    font-size: 0.8rem;
+}
+/* Featured products */
+.row{
+    display: flex;
+}
+.col4{
+padding: 10px;
+min-width: 200px;
+margin-bottom: 50px;
+}
+.col4 img{
+    width: 455px;
+    padding-top: 23px;
+}
+
+/* Footer */
+#footer{
+    background: #000;
+    color: #8a8a8a;
+    font-size: 14px;
+    padding: 60px 30px;
+    height: 108px;
+}
+
+#footer h3{
+    color: white;
+    margin-bottom: 20px;
+    width: 103px;
+}
+
+.footer-col-2{
+    margin: 0px 214px;
+    font-size: 20px;
+}
+
+.footer-col-2 img{
+    height: 99px;
+}
+
+/* .footer-col-3{
+    padding: 0px 22px;
+} */
+
+.footer-col-4{
+ width: 74px;  
+}
+
+.footer-col-1 button{
+    cursor: pointer;
+    border-radius: 15px;
+    padding: 6px 9px;
+    margin: 5px -6px;
+    width: 104px;
+}
+
+
+
+/* Utility Classes */
+.center{
+    text-align: center;
+}
+
+hr{
+    border-top: 2px solid gray;
+    margin: 22px 214px;
+}
+
+.headingprimary{
+    margin:0 auto;
+    position: relative;
+    line-height: 1;
+}
+
+.headingprimary::after{
+    content: "";
+    background: #ff523b;
+    width: 102px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    transform: translateX(-50%);
+    margin: -9px 0px;
+}
+
+
+
+.menu{
+    width: 28px;
+    margin-left: 20px;
+}

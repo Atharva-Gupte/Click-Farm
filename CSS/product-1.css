@@ -1,0 +1,100 @@
+/* CSS reset */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Navigation Bar */
+
+#navbar{
+    display: flex;
+    align-items: center;
+    position: sticky;
+    z-index: 1;
+    top: 0px;
+}
+
+#navbar::before{
+    content: "";
+    background-color: black;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.25;
+
+}
+
+/* Navigation Bar: List styling */
+
+nav{
+ flex:1;
+}
+
+nav ul{
+display: flex;
+justify-content: right;
+}
+
+nav ul li{
+    list-style: none;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    padding: 0px 9px;
+}
+
+nav ul li a:hover{
+    color: black;
+    background-color: white;
+    border-radius: 13px;
+}
+
+/* Navigation Bar: Logo */
+
+#logo img{
+    width: 100px;
+}
+
+/* Product */
+.row{
+    display: flex;
+}
+
+.col-2{
+    flex-basis: 50%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+}
+
+.col-2 img {
+    height: 318px;
+    width: 478px;
+    padding-top: 23px;
+    cursor: pointer;
+}
+
+h2{
+    padding: 23px 0px;
+}
+
+.col-2 p{
+    font-size: 20px;
+    padding: 23px 0px;
+}
+
+.btn{
+    width: 125px;
+    height: 44px;
+    border-radius: 11px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin: 42px -4px;
+    background: cornflowerblue;
+}

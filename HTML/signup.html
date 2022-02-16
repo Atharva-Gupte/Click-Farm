@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click-Farm: Sign Up</title>
+    <link rel="stylesheet" href="../CSS/signup.css">
+</head>
+<body>
+    <div class="alertbox">
+        <p class="alertpara">
+            Error Message
+        </p>
+    </div>
+    <div class="container">
+        <img src="../Images/logo2.jfif" class="logo" alt="">
+        <div>
+            <input type="text" autocomplete="off" name="" id="name" placeholder="name">
+            <input type="email" autocomplete="off" name="" id="email" placeholder="email">
+            <input type="password" autocomplete="off" name="" id="password" placeholder="password">
+            <!-- <a href="">     -->
+                <button class="submit-btn">
+                    Sign Up
+                </button>
+            <!-- </a> -->
+        </div>
+        <a href="/login" class="link"> Already have an account? Log in Here</a>
+    </div>
+    <script>
+        const submitBtn = document.querySelector('.submit-btn')
+
+const name = document.querySelector('#name');
+const email = document.querySelector('#email');
+const password = document.querySelector('#password');
+
+submitBtn.addEventListener('click', () => {
+    if(name.value.length < 3){
+        showAlert('name must be 3 letters long');
+    }
+    else if(!email.value.length){
+        showAlert('Enter your email');
+    }
+    else if(password.value.length < 5){
+        showAlert('Password should be more than 5 letters');
+    }
+    //submit
+    else{
+        SendData('/signup',{
+            name:name.value,
+            email:email.value,
+            password:password.value
+        })
+        location.replace("/");
+    }
+});
+const SendData = (path, data)=>{
+    
+    fetch(path,{
+        method:'post',
+        headers: new Headers({'content-type': 'application/json'}),
+        body: JSON.stringify(data)
+    }).then((res)=>res.json())
+    .then(response => {
+        processData(response);
+        })
+};
+
+const processData = (data) => {
+    if(data.alert){
+        showAlert(data.alert);
+    }
+    // else if(data.name){
+    //     console.log("inside else if ");
+    //     sessionStorage.user = JSON.stringify(data);
+    //     location.replace("/");
+    // }
+    
+}
+
+const showAlert = (msg) => {
+    let alertBox = document.querySelector('.alertbox');
+    let alertMsg = document.querySelector('.alertpara');
+    alertMsg.innerHTML = msg;
+    alertBox.classList.add('show');
+    setTimeout(()=>{
+        alertBox.classList.remove('show');
+    }, 3000);
+};
+
+
+    </script>
+
+</body>
+</html>

@@ -9,12 +9,14 @@
 </head>
 <body>
     <div class="container">
-        <h2>Buy Product-1</h2>
+        <h2>Buy Coriander</h2>
         <img src="../Images/logo2.jfif" class="logo" alt="">
         <div>
             <!-- Show farmers available -->
-            <a href="/farmers"> Show Farmers</a>
+            <a href="/farmers" target="_blank"> Show Farmers</a>
             <form action="/payment", method="post">
+                <input type="text" autocomplete="off" name="ID" id="ID" placeholder="Enter ID from Farmers Details">
+                <input type="text" autocomplete="off" name="PID" id="PID" placeholder="Enter p_id from Farmers Details">
                 <input type="text" autocomplete="off" name="name2" id="name" placeholder="Enter your name">
                 <input type="username" autocomplete="off" name="username" id="username" placeholder="Enter your Username">
                 <input type="address" autocomplete="off" name="address" id="address" placeholder="Enter your address">

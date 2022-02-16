@@ -1,0 +1,85 @@
+/* CSS reset */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Navigation Bar */
+
+#navbar{
+    display: flex;
+    align-items: center;
+    position: sticky;
+    z-index: 1;
+    top: 0px;
+}
+
+#navbar::before{
+    content: "";
+    background-color: black;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.25;
+
+}
+
+/* Navigation Bar: List styling */
+
+nav{
+ flex:1;
+}
+
+nav ul{
+display: flex;
+justify-content: right;
+}
+
+nav ul li{
+    list-style: none;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    padding: 0px 9px;
+}
+
+nav ul li a:hover{
+    color: black;
+    background-color: white;
+    border-radius: 13px;
+}
+
+/* Navigation Bar: Logo */
+
+#logo img{
+    width: 100px;
+}
+
+/* products */
+h2{
+    text-align: center;
+}
+.col-4{
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+}
+.row{
+    display: flex;
+}
+.col-4 img{
+    width: 268px;
+    padding-top: 23px;
+    cursor: pointer;
+}
+
+.col-4:hover{
+transform: translateY(-5px);
+}

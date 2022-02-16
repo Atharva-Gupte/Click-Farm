@@ -1,0 +1,19 @@
+{
+  "name": "dbmsminiproject",
+  "version": "1.0.0",
+  "description": "e commerce website",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.3.2",
+    "nodemon": "^2.0.13",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "AG",
+  "license": "ISC"
+}

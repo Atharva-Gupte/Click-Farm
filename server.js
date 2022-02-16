@@ -45,16 +45,26 @@ app.get("/buynow", (req, res) => {
 });
 
 app.get("/farmers", (req, res) => {
-    connection.query("select fid,f_name,village from farmers", (error, rows, fields) => {
+    connection.query("select price.fid,f_name,village,price.p_id,price.p_price from farmers inner join price on  farmers.fid = price.fid where  p_id=1;", (error, rows, fields) => {
         if (error) throw error
-        res.render('farmers.pug', { title: 'User Details', items: rows })
+        res.render('farmers.pug', { title: 'Farmer Details', items: rows })
         console.log(rows)
+
+        // connection.query("select fid,f_name,village from farmers", (error, rows, fields) => {
+        //     if (error) throw error
+        //     res.render('farmers.pug', { title: 'User Details', items: rows })
+        //     console.log(rows)
     });
 });
 
 app.post("/payment", urlencodedparser, (req, res) => {
     console.log(req.body);
-    var sql = "insert into orders values(null, '" + req.body.name2 + "', '" + req.body.phone + "', '" + req.body.address + "', '" + req.body.username + "', null, null, null)";
+    const fid=req.body.ID;
+    const PID=req.body.PID;
+    // const fid=req.body.ID;
+
+    var sql2= "select p_price from price where fid='"+fid+"' and p_id='"+PID+"' ";
+    var sql = "insert into orders values(null, '" + req.body.name2 + "', '" + req.body.phone + "', '" + req.body.address + "', '" + req.body.username + "', null, null, '"+sql2+"')";
     connection.query(sql, (err, results, fields) => {
         if (err) {
             console.log("failed", err);
